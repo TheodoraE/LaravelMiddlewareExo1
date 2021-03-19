@@ -24,6 +24,7 @@
         <div class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center py-4 sm:pt-0">
             <div class="hidden fixed top-0 left-0 px-6 py-4 sm:block">
                 <ul>
+                    <a href="/">Welcome</a>
                     <a href="/articles">Articles</a>
                     <a href="/backoffices">Backoffice</a>
                 </ul>
@@ -41,10 +42,7 @@
                     @endauth
                 </div>
             @endif
-
-            <div class="container">
-                <h1>Welcome</h1>
-            </div>
+            @yield('content')
         </div>
     </body>
 </html>
