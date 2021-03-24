@@ -10,7 +10,7 @@ class ArticleController extends Controller
 
     public function __construct()
     {
-        $this->middleware('connected');
+        $this->middleware(['auth']);
     }
     /**
      * Display a listing of the resource.

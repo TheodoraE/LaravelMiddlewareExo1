@@ -8,7 +8,7 @@ class BackController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('connected');
+        $this->middleware(['auth', 'role']);
     }
     
     /**
