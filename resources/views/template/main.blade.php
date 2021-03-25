@@ -19,14 +19,15 @@
                 font-family: 'Nunito', sans-serif;
             }
         </style>
+        <link rel="stylesheet" href="{{asset('css/app.css')}}">
     </head>
     <body class="antialiased">
         <div class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center py-4 sm:pt-0">
             <div class="hidden fixed top-0 left-0 px-6 py-4 sm:block">
-                <ul>
-                    <a href="/">Welcome</a>
-                    <a href="/articles">Articles</a>
-                    <a href="/backoffices">Backoffice</a>
+                <ul >
+                    <a href="/" class="text-dark" style="text-decoration: none"> <b>Welcome</b> </a>
+                    <a href="/articles" class="text-dark" style="text-decoration: none"> <b>Articles</b> </a>
+                    <a href="/backoffices" class="text-dark" style="text-decoration: none"> <b>Backoffice</b> </a>
                 </ul>
             </div>
             @if (Route::has('login'))

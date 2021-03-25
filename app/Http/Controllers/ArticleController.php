@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Article;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class ArticleController extends Controller
 {
@@ -19,7 +20,8 @@ class ArticleController extends Controller
      */
     public function index()
     {
-        return view('pages.articles');
+        $articles = Article::all();
+        return view('pages.articles.articles', compact('articles'));
     }
 
     /**
@@ -29,7 +31,7 @@ class ArticleController extends Controller
      */
     public function create()
     {
-        //
+        return view('pages.articles.createArticle');
     }
 
     /**
@@ -40,7 +42,12 @@ class ArticleController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $store = new Article;
+        $store->title = $request->title;
+        $store->text = $request->text;
+        $store->user_id = Auth::user()->id;
+        $store->save();
+        return redirect('/backoffices');
     }
 
     /**
@@ -51,7 +58,8 @@ class ArticleController extends Controller
      */
     public function show(Article $article)
     {
-        //
+        $show = $article;
+        return view('pages.articles.showArticle', compact('show'));
     }
 
     /**
@@ -62,7 +70,8 @@ class ArticleController extends Controller
      */
     public function edit(Article $article)
     {
-        //
+        $edit = $article;
+        return view('pages.articles.editArticle', compact('edit'));
     }
 
     /**
@@ -74,7 +83,14 @@ class ArticleController extends Controller
      */
     public function update(Request $request, Article $article)
     {
-        //
+        $validate = $request->validate([
+            "title" => "required",
+            "text" => "required"
+        ]);
+        $article->title = $request->title; 
+        $article->text = $request->text;
+        $article->save();
+        return redirect('/backoffices');
     }
 
     /**
@@ -85,6 +101,8 @@ class ArticleController extends Controller
      */
     public function destroy(Article $article)
     {
-        //
+        $destroy = $article;
+        $destroy->delete();
+        return redirect('/backoffices');
     }
 }

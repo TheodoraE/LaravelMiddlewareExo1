@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Article;
 use Illuminate\Http\Request;
 
 class BackController extends Controller
@@ -18,7 +19,8 @@ class BackController extends Controller
      */
     public function index()
     {
-        return view('pages.backoffice');
+        $articles = Article::all();
+        return view('pages.back.backoffice', compact('articles'));
     }
 
     /**
