@@ -47,7 +47,7 @@ class ArticleController extends Controller
         $store->text = $request->text;
         $store->user_id = Auth::user()->id;
         $store->save();
-        return redirect('/backoffices');
+        return redirect('/articles');
     }
 
     /**

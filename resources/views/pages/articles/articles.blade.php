@@ -3,6 +3,8 @@
 @section('content')
     <div class="container">
         <h1>Les articles</h1>
+        
+        <a href="/articles/create" class="btn btn-info mb-2">Ajouter un article</a>
 
         <table class="table">
             <thead>
@@ -17,7 +19,9 @@
               @foreach ($articles as $article)
                 <tr>
                     <th scope="row">{{$article->id}}</th>
-                    <td>{{$article->title}}</td>
+                    <td>
+                      <a href="/articles/{{$article->id}}">{{$article->title}}</a>
+                    </td>
                     <td>{{$article->text}}</td>
                     <td>{{$article->users->name}}</td>
                 </tr>

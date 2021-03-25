@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\BackController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -24,5 +25,6 @@ Auth::routes();
 
 Route::resource('articles', ArticleController::class);
 Route::resource('backoffices', BackController::class);
+Route::resource('users', UserController::class);
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

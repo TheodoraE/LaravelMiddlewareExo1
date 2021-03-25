@@ -2,9 +2,14 @@
 
 @section('content')
     <div class="container">
-        <h1 class="mb-3">Backoffice</h1>
+      <div>
+        <ul>
+          <a href="/backoffices" class="text-dark"><h5>Articles</h5></a>
+          <a href="/users" class="text-dark"><h5>Users</h5></a>
+        </ul>
+      </div>
 
-        <a href="/articles/create" class="btn btn-info mb-2">Ajouter un article</a>
+        <h1 class="mb-3">Backoffice</h1>
 
         <table class="table">
             <thead>
@@ -13,7 +18,7 @@
                 <th scope="col">Title</th>
                 <th scope="col">Text</th>
                 <th scope="col">Author</th>
-                <th scope="col"> </th>
+                {{-- <th scope="col"> </th> --}}
                 <th scope="col"> </th>
                 <th scope="col"> </th>
               </tr>
@@ -25,9 +30,9 @@
                     <td>{{$article->title}}</td>
                     <td>{{$article->text}}</td>
                     <td>{{$article->users->name}}</td>
-                    <td>
+                    {{-- <td>
                         <a href="/articles/{{$article->id}}" class="btn btn-primary">SHOW</a>
-                    </td>
+                    </td> --}}
                     <td>
                         <a href="/articles/{{$article->id}}/edit" class="btn btn-warning">EDIT</a>
                     </td>

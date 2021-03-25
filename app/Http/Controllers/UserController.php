@@ -2,16 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Article;
+use App\Models\User;
 use Illuminate\Http\Request;
 
-class BackController extends Controller
+class UserController extends Controller
 {
-    public function __construct()
-    {
-        $this->middleware(['auth' ,'role']);
-    }
-    
     /**
      * Display a listing of the resource.
      *
@@ -19,8 +14,8 @@ class BackController extends Controller
      */
     public function index()
     {
-        $articles = Article::all();
-        return view('pages.back.backoffice', compact('articles'));
+        $users = User::all();
+        return view('pages.users.users', compact('users'));
     }
 
     /**

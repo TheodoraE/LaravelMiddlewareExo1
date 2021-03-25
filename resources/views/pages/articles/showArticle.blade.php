@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="card">
-        <a href="/backoffices" class="btn btn-info">Go Back</a>
+        <a href="/articles" class="btn btn-info">Go Back</a>
         <div class="card-body">
             <table class="table">
                 <thead>
