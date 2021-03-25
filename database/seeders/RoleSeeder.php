@@ -25,6 +25,9 @@ class RoleSeeder extends Seeder
                 [
                     "name" => 'webmaster',
                 ],
+                [
+                    "name" => 'redactor',
+                ]
             ]
         );
     }

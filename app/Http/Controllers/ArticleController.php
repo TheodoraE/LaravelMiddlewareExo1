@@ -12,6 +12,7 @@ class ArticleController extends Controller
     public function __construct()
     {
         $this->middleware(['auth']);
+        $this->middleware('redactor')->only('edit','update','delete');
     }
     /**
      * Display a listing of the resource.

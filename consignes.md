@@ -1,3 +1,4 @@
+# Middleware
 Exercice laravel_middleware_1
 - Créez un projet avec 2 pages pour les utilisateurs et 1 backoffice
    - Accueil 
@@ -34,6 +35,17 @@ Exercice laravel_middleware_1_part_4
 Exercice laravel_middleware_1_part_5
 1.Faire un commit
 2.Créer un rôle Rédacteur
-- Les rédacteurs peuvent accèder a toutes les pages saufe celle des users dans le backoffice
-- Les rédacteurs ne peuvent accéder a l'édit et l'update et le delete uniquement que des articles qu'ils ont eux même créez, ils ne peuvent pas edit/update/delete les articles des autres.
+- __Les rédacteurs peuvent accèder a toutes les pages saufe celle des users dans le backoffice__
+- __Les rédacteurs ne peuvent accéder a l'édit et l'update et le delete uniquement que des articles qu'ils ont eux même créez, ils ne peuvent pas edit/update/delete les articles des autres.__
+
+# Gate
+Exercice Gate 1
+Dans le projet middleware
+-Permettre aux rédacteur de ne voir que les buttons delete de leurs articles
+
+Exercice Gate 2
+Dans le projet middleware
+- Créer plusieurs Admin
+- Chaque Admin doit pouvoir supprimer tous les users mis à part eux même ou un user qui aurait le role admin
+- Les admins ne peuvent editer que des personnes qui n'ont pas le role Admin
 
